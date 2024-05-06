@@ -7,7 +7,7 @@ interface Props {
 
 const GameCard = ({ product }: Props) => {
   return (
-    <Card borderRadius={10} overflow="hidden">
+    <Card borderRadius={10} overflow="hidden" textAlign="left">
       <Image src={product.banimodeDetails.images.large_default[0]} />
       {product.label && (
         <Badge
@@ -26,9 +26,10 @@ const GameCard = ({ product }: Props) => {
           {product.label}
         </Badge>
       )}
-      <Heading size="5" textAlign="right">
-        {product.title}
-      </Heading>
+      <p style={{ paddingLeft: 10 }}>
+        {product.banimodeDetails.product_manufacturer_en_name}
+      </p>
+      <p style={{ paddingLeft: 10 }}>Price: {product.salePrice} Rials</p>
     </Card>
   );
 };

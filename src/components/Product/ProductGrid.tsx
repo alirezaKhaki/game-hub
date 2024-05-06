@@ -5,7 +5,7 @@ import GameCard from "./ProductCard";
 const ProductGrid = () => {
   const { products, error } = useProduct();
 
-  if (error) return alert(error);
+  if (error) return <h1>{error}</h1>;
 
   return (
     <SimpleGrid columns={{ sm: 2, lg: 5 }} spacing={5} padding={5}>
