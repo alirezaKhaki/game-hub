@@ -1,4 +1,11 @@
-export const DefaultProductFilter = {
+import { IPagination } from "../../interface/Pagination/pagination.interface";
+
+export const DefaultProductFilter: IPagination = {
+  unique: {
+    sku: {
+      eq: 1,
+    },
+  },
   option: {
     page: {
       eq: 1,

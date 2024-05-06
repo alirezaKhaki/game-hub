@@ -1,4 +1,6 @@
+import { SimpleGrid } from "@chakra-ui/react";
 import useProduct from "../../hooks/Product/useProduct";
+import GameCard from "./ProductCard";
 
 const ProductGrid = () => {
   const { products, error } = useProduct();
@@ -6,11 +8,11 @@ const ProductGrid = () => {
   if (error) return alert(error);
 
   return (
-    <ul>
+    <SimpleGrid columns={{ sm: 2, lg: 5 }} spacing={10} padding={5}>
       {products?.result.map((p) => {
-        return <li key={p.barcode}>barcode: {p.barcode}</li>;
+        return <GameCard product={p} key={p.barcode} />;
       })}
-    </ul>
+    </SimpleGrid>
   );
 };
 
