@@ -8,7 +8,7 @@ const ProductGrid = () => {
   if (error) return alert(error);
 
   return (
-    <SimpleGrid columns={{ sm: 2, lg: 5 }} spacing={10} padding={5}>
+    <SimpleGrid columns={{ sm: 2, lg: 5 }} spacing={5} padding={5}>
       {products?.result.map((p) => {
         return <GameCard product={p} key={p.barcode} />;
       })}
